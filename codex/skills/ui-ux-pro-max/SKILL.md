@@ -50,7 +50,7 @@ If `python` is not found, try `python3`, then `py -3`. Use Python 3.10 or newer 
 
 Choose the smallest search mode that fits the request:
 
-1. **New project/page or system-wide visual direction** → use `--design-system`.
+1. **A new product-wide visual direction is needed** → use `--design-system`; an ordinary new page in an existing system does not by itself require one.
 2. **Targeted concern or component bug** → use one explicit `--domain`.
 3. **Known implementation stack** → use `--stack`; add a separate domain search only for a distinct design concern.
 
@@ -70,9 +70,9 @@ Extract from the user request:
 - **Style keywords**: playful, vibrant, minimal, dark mode, content-first, immersive, etc.
 - **Stack**: detect from the project — check `package.json` deps (react/next/vue/svelte/nuxt/@angular), `pubspec.yaml` (Flutter), `*.xcodeproj`/`Package.swift` (SwiftUI), `composer.json` (Laravel), or React Native markers (`app.json` + `react-native` dep). If nothing is detectable and stack guidance matters, ask the user. **Never assume a stack** — a hardcoded default silently misroutes every recommendation.
 
-### Step 2: Generate Design System (REQUIRED for new pages/projects)
+### Step 2: Generate a design system when needed
 
-Use `--design-system` when the task needs a coherent product-wide visual direction:
+Use `--design-system` only when the task needs a new coherent product-wide visual direction; reuse the project's existing design system and approved direction for ordinary new pages. Numerical values and general guidance in this skill are recommendations, not universal standards; verify applicable requirements against authoritative sources and the project context.
 
 ```bash
 python "<absolute-ui-ux-pro-max-directory>/scripts/search.py" "<product_type> <industry> <keywords>" --design-system [-p "Project Name"]
