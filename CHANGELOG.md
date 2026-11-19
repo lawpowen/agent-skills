@@ -1,5 +1,13 @@
 # Changelog
 
+## 2026-10-29
+
+### Respect project-specific UI design and technology
+
+- Updated the cross-project UI standards entrypoint to follow existing project instructions, approved design directions and technology stacks, and route optional review, React and shadcn/ui skills only when applicable.
+- Made design-system generation conditional on needing a new product-wide direction in the locally maintained UI UX Pro Max snapshot.
+- Clarified upstream attribution for Next Level Builder and Anthropic, preserved their bundled licenses, and updated bundle installation and usage guidance.
+
 ## 2026-10-24
 
 ### Package the UI workflow for another Codex installation
