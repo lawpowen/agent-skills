@@ -5,11 +5,11 @@ description: UI 设计规范与技能导航入口。在设计、实现、修改�
 
 # UI 设计规范与技能导航
 
-作为页面和组件设计任务的共同入口，先应用本文件中的用户规范，再按实际任务读取相关技能。沿用项目已有设计系统、组件和技术栈，不因使用导航而扩大改动范围。
+作为跨项目页面和组件设计任务的共同入口，先查看用户要求、项目指令、现有页面、设计系统和技术栈，再应用本文件中的用户偏好并按需读取专项技能。用户明确要求与项目指令、已确认的设计方向和可访问性要求优先；不因使用导航而扩大改动范围或替换技术栈。若项目已有自己的 UI 标准入口，按项目指令先读该入口，本技能作为补充，避免循环调用或重复执行；项目局部版本与本全局版本各自维护。
 
 ## 默认调用流程
 
-所有 UI 任务先读本技能，应用我们的规范，再按下面的顺序选择专项技能：
+遵循项目指定的入口后，应用我们的规范，再按下面的顺序选择专项技能；设计或审查任务本身不授权实现、发布或修改项目文件。
 
 `ui-design-standards → ui-ux-pro-max（按需） → 当前任务需要的专项技能或补充参考`
 
@@ -19,7 +19,7 @@ description: UI 设计规范与技能导航入口。在设计、实现、修改�
 4. **涉及聊天与桌面工作台交互时，读取 `ui-chat-desktop-interactions`。** 聚焦 IME 发送、消息滚动、流式阅读、分栏拖动及文件名展示；若同时有弹窗或确认，再组合 `ui-feedback-patterns`，不要把所有桌面页面都导向聊天专项。
 5. **需要视觉质感或微动效细化时，读取 [视觉与动效补充参考](references/visual-motion.md)。** 这是按需参考，不是新技能或强制风格；边框、暗色字重、同心圆角、流式文字、等宽数字和动画参数的核实集中在此。
 
-跨电脑安装时，核心包包含 `ui-design-standards`、`ui-ux-pro-max`、`ui-feedback-patterns`、`ui-chat-desktop-interactions` 和 `frontend-design`。下方 Sleek、Figma、Sites 等属于可选能力，需要目标环境另行安装并具备相应连接；缺少这些能力不影响核心 UI 流程。
+核心包包含 `ui-design-standards`、`ui-ux-pro-max`、`ui-feedback-patterns`、`ui-chat-desktop-interactions` 和 `frontend-design`。其他技能按当前会话可用清单和项目局部指令选择，缓存中存在文件不等于可调用；缺少可选技能时用现有工具继续，不自动安装依赖或替换项目技术栈。
 
 其他 UI 技能按下方导航进入相应分支，不能跳过我们的规范，也不需要一次性加载所有技能。用户明确指定的方案与项目约束优先，工具的强制前置技能仍需遵守。
 
@@ -58,6 +58,9 @@ description: UI 设计规范与技能导航入口。在设计、实现、修改�
 | 提示、确认、弹窗、抽屉、底部面板、动作选单、引导、媒体查看和字段错误 | `ui-feedback-patterns` | 覆盖原提示组件及 Bottom Sheet、Action Sheet、Snackbar、AlertDialog、Tour、Lightbox、Inline error；处理模态性、焦点、关闭、撤销与输入保护 |
 | 聊天输入、流式消息列表、桌面可调分栏与文件名展示 | `ui-chat-desktop-interactions` | 处理输入法、跟随阅读状态、拖动恢复与识别信息；不替代通用页面设计或弹窗选型 |
 | 现有页面的视觉质感、暗色排版、边框圆角与微动效 | [视觉与动效补充参考](references/visual-motion.md) | 按需结合 `ui-ux-pro-max`；区分已核实机制、工程建议与场景参数，不复制视频固定数值 |
+| 检查已有 UI 的体验、响应式和无障碍 | 当前可用的审查技能，例如 `product-design:audit` 或 Web Design Guidelines | 根据真实界面、用户任务与改动范围检查；具体规范以适用的官方标准核实，未验证的部分明确标注 |
+| React / Next.js 页面、组件或性能 | 当前可用的 React Best Practices | 仅在项目实际使用 React 时选择，结合版本、项目约定和具体问题；不将其规则套用于 Vue、Django 模板等 |
+| 使用 shadcn/ui 的 React 项目 | 当前可用的 shadcn/ui 专项技能 | 先核对现有依赖、版本、组件和主题；不为调用技能引入组件库或改变技术栈 |
 | 手机 App 界面、Sleek 项目或 Sleek 设计的代码实现 | `sleek-design-mobile-apps` | 按其移动端设计流程执行；保留本文件的界面文案规范，遵守认证、费用和外部数据访问边界 |
 | Figma 设计转代码 | `figma:figma-design-to-code` | 先读取该技能，再调用设计上下文工具；涉及 SwiftUI 或动画时再加载对应技能 |
 | 向 Figma 创建或修改页面、组件、设计系统 | 对应 `figma:*` 技能 | 按下方 Figma 导航选择；不能用本文件替代工具的强制前置技能 |
